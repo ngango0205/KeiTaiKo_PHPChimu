@@ -57,6 +57,14 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def form_edit
+    @review = Review.find_by id: params[:review_id]
+    @comment = Comment.find_by id: params[:comment_id]
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   attr_reader :review

@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :reviews do
     resources :comments, only: :create
     get "form_reply"
+    get "form_edit"
   end
-  resources :comments, only: :destroy
+  resources :comments, only: [:update, :destroy]
   resources :likes, only: [:create, :destroy]
 
   namespace :admin do

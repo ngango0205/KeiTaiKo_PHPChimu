@@ -1,0 +1,28 @@
+<div class="comment">
+  <div class="comment-author">
+    <a href="#">
+    <% if current_user.picture? %>
+      <%= cl_image_tag(current_user.picture, :class => "rounded-circle") %>
+    <% else %>
+      <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"rounded-circle") %>
+    <% end %>
+    </a>
+  </div>
+  <div class="comment-content">
+    <div class="comment-meta">
+      <div class="comment-meta-author">
+        <%= current_user.name %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="comment-body">
+      <%= form_for :comment, url: comment_path(@comment), method: :patch do |f| %>
+        <%= hidden_field_tag :review_id,
+          @review.id %>
+        <%= text_area :comment, :content, :rows => 2, :cols => 70, 
+          class:"form-control", placeholder: @comment.content %>
+        <%= f.submit t(".edit_comment"), class:"btn btn-color btn-md btn-message" %>
+      <% end %>
+    </div>
+  </div>
+</div>

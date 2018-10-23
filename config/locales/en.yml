@@ -57,6 +57,7 @@ en:
       comment_section: "Comment Section"
       delete_comment: "Delete Comment"
       reply: "Reply"
+      edit: "Edit"
     edit:
       not_permission: "You don't have permission to edit this review"
       title: "Edit Review"
@@ -73,6 +74,8 @@ en:
       review_not_found: "Can't find this review. Try again."
     form_reply:
       reply_comment: "Reply Comment"
+    form_edit:
+      edit_comment: "Edit Comment"
   static_pages:
     show:
       sign_up: "Sign Up Now!"
@@ -101,6 +104,9 @@ en:
     create:
       comment_success: "Comment successfully."
       comment_fail: "Can't comment now. Please try again."
+    update:
+      update_success: "Update comment successfully."
+      update_fail: "Can't update comment now. Please try again."
     destroy:
       delete_success: "Delete comment successfully"
       delete_fail: "Can't delete comment now. Please try again."

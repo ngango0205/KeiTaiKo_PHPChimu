@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :find_review, only: [:create, :destroy]
-  before_action :find_comment, only: :destroy
+  before_action :find_review, only: %i(create update destroy)
+  before_action :find_comment, only: %i(update destroy)
   before_action :check_permission, only: :destroy
 
   def create
@@ -8,6 +8,16 @@ class CommentsController < ApplicationController
       create_comment
     else
       create_reply_comment
+    end
+  end
+
+  def update
+    if comment.update_attributes comments_params
+      flash[:success] = t ".update_success"
+      redirect_to review
+    else
+      flash[:danger] = t ".update_fail"
+      redirect_to review
     end
   end
 
