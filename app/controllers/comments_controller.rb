@@ -23,7 +23,8 @@ class CommentsController < ApplicationController
 
   def destroy
     @review = comment.review
-    if comment.destroy
+    @sub_comment = Comment.find_sub_comments(comment.id)
+    if comment.destroy && sub_comment.destroy_all
       flash[:success] = t ".delete_success"
       redirect_to review
     else
@@ -34,7 +35,7 @@ class CommentsController < ApplicationController
 
   private
 
-  attr_reader :comment, :review
+  attr_reader :comment, :review, :sub_comment
 
   def check_permission
     unless comment.user == current_user

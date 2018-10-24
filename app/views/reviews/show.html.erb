@@ -24,7 +24,11 @@
                 <div class="pull-left">
                   <h3><%= @review.name %></h3>
                   <p><i class="fa fa-map-marker"></i>
-                    <%= @review.user.name %>
+                    <% if @review.user.present? %>
+                      <%= @review.user.name %>
+                    <% else %>
+                      Unknown User
+                    <% end %>
                   </p>
                   <% @object = @review %>
                   <%= render "likes/like_form" %>
@@ -185,7 +189,7 @@
                             </div>
                             <div class="comment-meta-reply">
                               <% if sub_comment.user == current_user %>
-                                <%= link_to t(".delete_comment"), comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
+                                <%= link_to t(".delete_comment"), comment_path(sub_comment), method: :delete, data: { confirm: "Are you sure?" } %>
                               <% end %>
                               <%= link_to t(".reply"), review_form_reply_path(@review, parent_cmt_id: comment.id), remote: true %>
                               <%= link_to t(".edit"), review_form_edit_path(@review, comment_id: sub_comment.id), remote: true %> 
