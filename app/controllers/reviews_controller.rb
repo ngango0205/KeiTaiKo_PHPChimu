@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = Review.order("created_at DESC").page params[:page]
+    @brands = Brand.all
   end
 
   def new

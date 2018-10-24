@@ -3,11 +3,6 @@
       <div class="col-lg-5 col-md-5 col-pad">
           <div class="property-thumbnail">
             <div class="property-img">
-              <div class="price-ratings-box">
-                <p>
-                  <%= t "admin.reviews.review_detail.price_str", price: price_review(review.price) %>
-                </p>
-              </div>
               <% if review.picture? %>
                 <%= cl_image_tag(review.picture, :class => "img-fluid") %>
               <% else %>
@@ -37,13 +32,9 @@
             <%= link_to review do %><%= review.name %><% end %>
           </h1>
           <p><%= review.review %></p>
-          <div class="location">
-            <a href="properties-details.html">
-            <i class="fa fa-map-marker"></i>123 Kathal St. Tampa City,
-            </a>
-          </div>
+          <p><%= t "admin.reviews.review_detail.price_str", price: price_review(review.price) %></p>
           <div class="ratings fa">
-            <%= rating_for_user review, current_user, "original_score" %>
+            <%= rating_for review, "original_score", star: 5 %>
           </div>
           <ul class="facilities-list clearfix">
             <li>
