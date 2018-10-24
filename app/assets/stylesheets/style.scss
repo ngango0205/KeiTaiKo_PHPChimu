@@ -1272,7 +1272,7 @@ a {
 }
 /** SUB BANNER **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../img/sub-banner.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(image-path('sub-banner.jpg')) top left repeat;
     background-size: cover;
     height: 290px;
     background-position: center center;
@@ -1973,7 +1973,7 @@ a {
     background-repeat: no-repeat;
     border: none;
     margin: 0;
-    background: rgba(0, 0, 0, 0.04) url(../img/sub-banner.jpg) top left repeat;
+    background: rgba(0, 0, 0, 0.04) url(image-path('sub-banner.jpg')) top left repeat;
     background-size: cover;
     color: #efefef;
 }
@@ -3610,7 +3610,7 @@ a {
     border: 1px solid #dedede;
     background: transparent;
     outline: 0;
-    color: #f6f6f6;
+    /*color: #f6f6f6;*/
     height: 45px;
     border-radius: 3px;
 }

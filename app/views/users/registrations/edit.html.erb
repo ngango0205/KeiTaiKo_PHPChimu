@@ -9,13 +9,18 @@
           <div class="header clearfix">
             <h2><%= current_user.name %></h2>
             <img src="<%= current_user.picture %>" alt="avatar" class="img-fluid profile-img">
+            <% if current_user.picture.present? %>
+              <%= cl_image_tag(current_user.picture, class:"img-fluid profile-img") %>
+            <% else %>
+              <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"img-fluid profile-img") %>
+            <% end %>
           </div>
           <!-- Detail -->
           <div class="detail clearfix">
             <ul>
               <li>
                 <%= link_to t(".profile"), edit_user_registration_path %>
-              </li>
+              </li> 
               <!-- <li>
                 <a href="my-properties.html">
                 <i class="flaticon-house"></i>My Properties
@@ -51,15 +56,15 @@
             <div class="row">
 
               <div class="col-lg-12 ">
-                <div class="form-group name">
+                <div class="form-group">
                   <%= f.label :name %><br />
-                  <%= f.text_field :name, class:"form-control", placeholder: current_user.name %>
+                  <%= f.text_field :name, class:"form-control" %>
                 </div>
               </div>
               <div class="col-lg-12">
-                <div class="form-group email">
+                <div class="form-group">
                   <%= f.label :email %><br />
-                  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: current_user.email, class:"form-control", readonly: true %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control", readonly: true %>
                 </div>
               </div>
               <div class="col-lg-12 ">

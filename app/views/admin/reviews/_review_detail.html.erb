@@ -72,7 +72,11 @@
     </div>
     <div class="footer">
       <a href="#">
-      <i class="fa fa-user"></i> <%= review.user.name %>
+      <% if review.user.present? %>
+        <i class="fa fa-user"></i> <%= review.user.name %>
+      <% else %>
+        <i class="fa fa-user"></i> Unknown User
+      <% end %>
       </a>
       <span>
       <i class="fa fa-calendar-o"></i> <%= review.created_at.strftime("%H:%M %-d/%-m/%y") %>
