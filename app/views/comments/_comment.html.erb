@@ -1,0 +1,31 @@
+<div class="comment-author">
+  <a href="#">
+  <% if comment.user.picture? %>
+  <%= cl_image_tag(comment.user.picture, :class => "rounded-circle") %>
+  <% else %>
+    <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"rounded-circle") %>
+  <% end %>
+  </a>
+</div>
+<div class="comment-content">
+  <div class="comment-meta">
+    <div class="comment-meta-author">
+      <%= comment.user.name %>
+    </div>
+    <div class="comment-meta-reply">
+      <% if comment.user == current_user %>
+        <%= link_to t(".delete_comment"), comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to t(".edit"), review_form_edit_path(@review,
+        comment_id: comment.id), remote: true %> 
+      <% end %>
+      <%= link_to t(".reply"), review_form_reply_path(@review, parent_cmt_id: comment.id), remote: true %>
+    </div>
+    <div class="comment-meta-date">
+      <span><%= comment.created_at.strftime("%H:%M %-d/%-m/%y") %></span>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="comment-body">
+    <p><%= comment.content %></p>
+  </div>
+</div>
