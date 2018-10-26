@@ -138,17 +138,10 @@
                 <div class="comment" id="comment-<%= comment.id %>">
                   <%= render "comments/comment", comment: comment %>
                 </div>
-                <ul>
-                  <% Comment.find_sub_comments(comment.id).each do |sub_comment| %>
-                    <li>
-                      <div class="comment" id="comment-<%= sub_comment.id %>">
-                        <%= render "comments/sub_comment", comment: comment, sub_comment: sub_comment %>
-                    </div>
-                    </li>
-                  <% end %>
+                <ul id="sub-comment-<%= comment.id %>-show">
+                  <%= render "comments/sub_comment_show", comment: comment %>
                 </ul>
               </li>
-            <div id="form-reply-<%= comment.id %>"></div>
             <% end %>
           </ul>
         </div>

@@ -72,8 +72,6 @@ en:
       destroy_fail: "Delete review fail."
     messages:
       review_not_found: "Can't find this review. Try again."
-    form_reply:
-      reply_comment: "Reply Comment"
   static_pages:
     show:
       sign_up: "Sign Up Now!"
@@ -112,6 +110,8 @@ en:
       not_permission: "You don't have permission to delete this comment."
     form_edit:
       edit_comment: "Edit Comment"
+    form_reply:
+      reply_comment: "Reply Comment"
   likes:
     like:
       like_button: "Like"

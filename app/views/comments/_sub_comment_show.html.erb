@@ -1,0 +1,8 @@
+<% Comment.find_sub_comments(comment.id).each do |sub_comment| %>
+  <li>
+    <div class="comment" id="comment-<%= sub_comment.id %>">
+      <%= render "comments/sub_comment", comment: comment, sub_comment: sub_comment %>
+  </div>
+  </li>
+<% end %>
+<div id="form-reply-<%= comment.id %>"></div>
