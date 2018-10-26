@@ -13,11 +13,21 @@ class CommentsController < ApplicationController
 
   def update
     if comment.update_attributes comments_params
-      flash[:success] = t ".update_success"
-      redirect_to review
+      respond_to do |format|
+        format.html {
+          flash[:success] = t ".update_success"
+          redirect_to review
+        }
+        format.js
+      end
     else
-      flash[:danger] = t ".update_fail"
-      redirect_to review
+      respond_to do |format|
+        format.html {
+          flash[:danger] = t ".update_fail"
+          redirect_to review
+        }
+        format.js {render inline: "location.reload();"}
+      end
     end
   end
 
