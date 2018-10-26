@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 
   private
 
-  attr_reader :comment, :review, :sub_comment
+  attr_reader :comment, :review, :sub_comment, :parent_comment
 
   def check_permission
     unless comment.user == current_user
@@ -84,14 +84,25 @@ class CommentsController < ApplicationController
 
   def create_reply_comment
     @comment = review.comments.new reply_comment_params
+    @parent_comment = Comment.find_by id: params[:parent_comment_id]
     comment.user = current_user
-    comment.parent_id = params[:parent_comment_id]
+    comment.parent_id = parent_comment.id
     if comment.save
-      flash[:success] = t ".comment_success"
-      redirect_to review_path(params[:review_id])
+      respond_to do |format|
+        format.html {
+          flash[:success] = t ".comment_success"
+          redirect_to review_path(params[:review_id])
+        }
+        format.js { render :action => "reply_comment" }
+      end
     else
-      flash[:danger] = t ".comment_fail"
-      redirect_to review_path(params[:review_id])
+      respond_to do |format|
+        format.html {
+          flash[:danger] = t ".comment_fail"
+          redirect_to review_path(parent_comment)
+        }
+        format.js {render inline: "location.reload();"}
+      end
     end
   end
 end
