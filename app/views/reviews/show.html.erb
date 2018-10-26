@@ -130,26 +130,14 @@
             </div>
           </div>
         </div>
-        <div class="comments-section">
-          <h3 class="heading"><%= t ".comment_section" %></h3>
-          <ul class="comments">
-            <% @comments.each do |comment| %>
-              <li>
-                <div class="comment" id="comment-<%= comment.id %>">
-                  <%= render "comments/comment", comment: comment %>
-                </div>
-                <ul id="sub-comment-<%= comment.id %>-show">
-                  <%= render "comments/sub_comment_show", comment: comment %>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
+        <div class="comments-section" id="comment-show">
+          <%= render "comments/comment_show" %>
         </div>
-        <div class="contact-3 mb-60">
+        <div class="contact-2 mb-60">
           <h3 class="heading"><%= t ".send_comment" %></h3>
           <div class="container">
             <div class="row">
-              <%= form_for :comment, url: review_comments_path(@review.id) do |f| %>
+              <%= form_for :comment, url: review_comments_path(@review.id), remote: true do |f| %>
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group message">

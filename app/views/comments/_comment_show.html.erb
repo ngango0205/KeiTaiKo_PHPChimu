@@ -1,0 +1,13 @@
+<h3 class="heading"><%= t ".comment_section" %></h3>
+<ul class="comments">
+  <% @comments.each do |comment| %>
+    <li>
+      <div class="comment" id="comment-<%= comment.id %>">
+        <%= render "comments/comment", comment: comment %>
+      </div>
+      <ul id="sub-comment-<%= comment.id %>-show">
+        <%= render "comments/sub_comment_show", comment: comment %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
