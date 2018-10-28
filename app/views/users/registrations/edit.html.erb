@@ -10,9 +10,9 @@
             <h2><%= current_user.name %></h2>
             <img src="<%= current_user.picture %>" alt="avatar" class="img-fluid profile-img">
             <% if current_user.picture.present? %>
-              <%= cl_image_tag(current_user.picture, class:"img-fluid profile-img") %>
+              <%= cl_image_tag(current_user.picture, class:"img-fluid-1 profile-img") %>
             <% else %>
-              <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"img-fluid profile-img") %>
+              <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"img-fluid-1 profile-img") %>
             <% end %>
           </div>
           <!-- Detail -->
@@ -99,13 +99,13 @@
                   <%= f.submit t(".update"), class:"btn btn-lg btn-round btn-theme"  %>
                 </div>
               </div>
+          <% end %>
               <div class="col-lg-6">
                 <div class="send-btn">
                   <%= button_to t(".delete_account"), user_registration_path, method: :delete, :data => {:confirm => 'Are you sure?'}, class:"btn btn-lg btn-round btn-theme" %>
                 </div>
               </div>
             </div>
-          <% end %>
         </div>
       </div>
     </div>

@@ -80,6 +80,13 @@ body {
     height: auto;
 }
 
+.img-fluid-1 {
+    width: 255px;
+    height: 255px;
+    object-position: center center;
+    object-fit: cover;
+}
+
 .page_loader {
     position: fixed;
     left: 0;
