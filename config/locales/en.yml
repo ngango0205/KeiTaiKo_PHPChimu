@@ -76,6 +76,19 @@ en:
     show:
       sign_up: "Sign Up Now!"
       sign_in: "Already have an account?"
+      sologan_1: "Think Different"
+      sologan_1_sub: "We Love Make Things Amazing And Simple"
+      sologan_2: "Imagine"
+      sologan_2_sub: "Film Your Story As You Intended"
+      sologan_3: "For Getting </br>Things Done"
+      sologan_3_sub: "Work Wide"
+      recent_reviews: "Recent Reviews"
+      most_review_user: "Most Review User"
+      most_popular_brand: "Most Popular Brand"
+      about: "About"
+      author_1: "Tu Hoang Anh"
+      author_2: "Nga Le Quynh"
+      author_3: "Lam Pham Van"
   users:
     registrations:
       edit:
