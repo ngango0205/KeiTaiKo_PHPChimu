@@ -227,11 +227,11 @@
           </div>
           <!-- detail -->
           <div class="detail">
-            <h5 class="title"><a href="properties-details.html"><%= @recent_reviews[0].name %></a></h5>
+            <h5 class="title"><a href="properties-details.html"><%= @recent_reviews[2].name %></a></h5>
             <h4 class="price">
-              <%= t "price_str", price: price_review(@recent_reviews[0].price) %>
+              <%= t "price_str", price: price_review(@recent_reviews[2].price) %>
             </h4>
-            <p><%= @recent_reviews[0].review %></p>
+            <p><%= @recent_reviews[2].review %></p>
           </div>
         </div>
       </div>
@@ -240,8 +240,8 @@
           <!-- property img -->
           <div class="property-thumbnail">
             <a href="properties-details.html" class="property-img">
-            <% if @recent_reviews[2].picture.present? %>
-              <%= cl_image_tag(@recent_reviews[2].picture, class:"img-fluid") %>
+            <% if @recent_reviews[3].picture.present? %>
+              <%= cl_image_tag(@recent_reviews[3].picture, class:"img-fluid") %>
             <% else %>
               <%= image_tag("banner-2", class:"img-fluid") %>
             <% end %>

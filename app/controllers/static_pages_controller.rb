@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def show
-    @brands = Brand.last(10)
     @recent_reviews = Review.last(4)
     
     @users = User.all.sort { |a, b| a.reviews.count <=> b.reviews.count }
