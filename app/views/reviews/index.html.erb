@@ -11,18 +11,69 @@
 </div>
 
 <div class="properties-list-rightside content-area-2">
-    <div class="container">
-        <div class="row">
-          <ul class="list-inline-listing filters filteriz-navigation">
-            <% @brand_all.each do |brand| %>
-              <li data-filter="1" class="btn btn-inline filtr-button filtr"><%= brand.name %></li>
-            <% end %>
-          </ul>
-          <div class="col-lg-8 col-md-12">
-              <%= render @reviews %>
-              <%= paginate @reviews %>
+  <div class="container">
+    <% k=1  %>
+    <% l=1  %>
+      <div class="tabbing tabbing-box mb-60">
+        <ul class="nav nav-tabs" id="carTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active show" id="a1-tab" data-toggle="tab" href="#a1" role="tab" aria-controls="a1" aria-selected="false">ALL</a>
+          </li>
+          <% @brands.each do |brand| %>
+            <% k += 1 %>
+            <li class="nav-item">
+              <a class="nav-link " id="a<%= k %>-tab" data-toggle="tab" href="#a<%= k %>" role="tab" aria-controls="a<%= k %>" aria-selected="true"><%= brand.name %></a>
+            </li>
+          <% end %>
+        </ul>
+
+        <div class="tab-content" id="carTabContent">
+          <div class="tab-pane fade active show" id="a1" role="tabpanel" aria-labelledby="a1-tab">
+            <h3 class="heading"><%= t ".all_review" %></h3>
+          <div class="subtitle">
+            <%= Review.all.count.to_s + " " + t("admin.reviews.index.result_found") %>
           </div>
-          <%= render "rightside" %>
+          <div class="row">
+            <% @reviews.each do |review| %>
+              <%= render "review", review: review %>
+            <% end %>
+            <div class="col-lg-12">
+              <div class="pagination-box">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <%= paginate @reviews %>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <% @brands.each do |brand| %>
+          <% l += 1 %>
+          <div class="tab-pane fade" id="a<%= l%>" role="tabpanel" aria-labelledby="a<%= l%>-tab">
+            <h3 class="heading">IPHONE</h3>
+          <div class="subtitle">
+            <%= Review.where(brand_id: l-1).count.to_s + " " + t("admin.reviews.index.result_found") %>
+          </div>
+          <div class="row">
+            <% Brand.find(l-1).reviews.each do |review| %>
+              <%= render "review", review: review %>
+            <% end %>
+            <div class="col-lg-12">
+              <div class="pagination-box">
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <%= paginate Brand.find(l-1).reviews.page params[:page] %>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          </div>
+          <% end %>
         </div>
-    </div>
+      </div>
+      
+  </div>
 </div>
