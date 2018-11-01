@@ -10,5 +10,13 @@ $(window).on('load', function () {
 		$('#popup-alert').removeClass('show');
 	});
 
+	$('#btn-full-page-search').on('click', function(){
+		$('#full-page-search').addClass('open');
+	});
+
+	$('#full-page-search .close').on('click', function(){
+		$('#full-page-search').removeClass('open');
+	});
+
 	showPopupBought();
 });
