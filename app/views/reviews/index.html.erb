@@ -1,3 +1,4 @@
+<%= provide :title, t(".title") %>
 <div class="sub-banner overview-bgi">
     <div class="container">
         <div class="breadcrumb-area">
@@ -17,7 +18,7 @@
       <div class="tabbing tabbing-box mb-60">
         <ul class="nav nav-tabs" id="carTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active show" id="a1-tab" data-toggle="tab" href="#a1" role="tab" aria-controls="a1" aria-selected="false">ALL</a>
+            <a class="nav-link active show" id="a1-tab" data-toggle="tab" href="#a1" role="tab" aria-controls="a1" aria-selected="false"><%= t ".all" %></a>
           </li>
           <% @brands.each do |brand| %>
             <% k += 1 %>
@@ -52,7 +53,7 @@
           <% @brands.each do |brand| %>
           <% l += 1 %>
           <div class="tab-pane fade" id="a<%= l%>" role="tabpanel" aria-labelledby="a<%= l%>-tab">
-            <h3 class="heading">IPHONE</h3>
+            <h3 class="heading"><%= brand.name %></h3>
           <div class="subtitle">
             <%= Review.where(brand_id: l-1).count.to_s + " " + t("admin.reviews.index.result_found") %>
           </div>
