@@ -173,8 +173,8 @@
 <!-- Full Page Search -->
 <div id="full-page-search">
     <button type="button" class="close">×</button>
-    <form action="#">
-        <input type="search" value="" placeholder="type keyword(s) here" />
-        <button type="button" class="btn btn-sm btn-color">Search</button>
-    </form>
+    <%= form_for :search, url: search_path do |f| %>
+        <%= search_field_tag :q, "type keyword(s) here" %>
+        <%= f.button :submit, class:"btn btn-sm" %>
+    <% end %>
 </div>

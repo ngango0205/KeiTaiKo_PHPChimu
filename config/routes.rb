@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [:update, :destroy]
   resources :likes, only: [:create, :destroy]
+  post "search", to: "searchs#search"
 
   namespace :admin do
     resources :reviews, only: [:index, :update]
