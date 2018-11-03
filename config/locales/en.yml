@@ -30,6 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  home: "Home"
   hello: "Hello world"
   sign_out: "Sign Out"
   price_str: "%{price}VND"
@@ -41,6 +42,9 @@ en:
       sign_up: "Sign Up"
       manage_review: "Manage Review"
   reviews:
+    index:
+      title: "All Review"
+      all: "All"
     new:
       create_review: "New Review"
       create: "Create"
@@ -146,3 +150,15 @@ en:
         confirm_fail: "Somethings errors.... Please try again."
       review_detail:
         price_str: "%{price}VND"
+    users:
+      user_detail:
+        name: "Name: "
+        email: "Email: "
+        created_at: "Created At: "
+  searchs:
+    search:
+      title: "Search Result"
+      user_title: "User"
+      review_title: "Review"
+      user_result: "User Search Result"
+      review_result: "Review Search Result"

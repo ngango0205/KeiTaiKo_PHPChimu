@@ -1,0 +1,38 @@
+<div class="property-box-5 col-lg-6">
+  <div class="row">
+      <div class="col-lg-5 col-md-5 col-pad">
+          <div class="property-thumbnail">
+            <div class="property-img">
+              <% if user.picture? %>
+                <%= cl_image_tag(user.picture, class:"img-fluid-1") %>
+              <% else %>
+                <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"img-fluid-1") %>
+              <% end %>
+            </div>
+            <div class="property-overlay">
+              <%= link_to edit_user_registration_path(user), class:"overlay-link" do %>
+                  <i class="fa fa-link"></i>
+              <% end %>
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-7 col-md-7 align-self-center col-pad">
+        <div class="detail">
+          <h1 class="title">
+            <%= link_to edit_user_registration_path(user) do %><%= user.name %><% end %>
+          </h1>
+          <ul class="facilities-list clearfix">
+            <li>
+              <%= t(".name") + user.name %>
+            </li><br><br><br>
+            <li>
+              <%= t(".email") + user.email %>
+            </li><br><br><br>
+            <li>
+              <%= t(".created_at") + user.created_at.strftime("%H:%M %-d/%-m/%y") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
