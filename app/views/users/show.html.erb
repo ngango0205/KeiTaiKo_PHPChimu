@@ -1,0 +1,35 @@
+<% provide :title, t(".show") %>
+<div class="user-page content-area-14">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-5 col-sm-12">
+        <div class="user-profile-box mrb">
+          <div class="header clearfix">
+            <h2><%= @user.name %></h2>
+            <img src="<%= @user.picture %>" alt="avatar" class="img-fluid profile-img">
+            <% if @user.picture.present? %>
+              <%= cl_image_tag(@user.picture, class:"img-fluid-1 profile-img") %>
+            <% else %>
+              <%= image_tag("https://2sao.vietnamnetjsc.vn/images/2018/06/26/00/39/dich-le-nhiet-ba-1.jpg", class:"img-fluid-1 profile-img") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-7 col-sm-12">
+        <div class="my-address contact-2 widget">
+          <h3 class="heading"><%= raw t ".show" %></h3>
+          <div class="row">
+            <b><%= t ".name" %></b>
+            <div class="col-lg-12 ">
+              <p><%= @user.name %></p>
+            </div>
+            <b><%= t ".email" %></b>
+            <div class="col-lg-12 ">
+              <p><%= @user.email %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
