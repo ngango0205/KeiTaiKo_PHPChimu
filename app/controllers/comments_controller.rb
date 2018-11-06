@@ -89,6 +89,7 @@ class CommentsController < ApplicationController
         redirect_to review_path(params[:review_id])
         }
         format.js { render inline: "location.reload();" }
+      end
     end
   end
 
