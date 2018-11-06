@@ -94,6 +94,10 @@ en:
       author_2: "Nga Le Quynh"
       author_3: "Lam Pham Van"
   users:
+    show:
+      show: "Profile"
+      name: "Name"
+      email: "Email"
     registrations:
       edit:
         profile: "Profile"
