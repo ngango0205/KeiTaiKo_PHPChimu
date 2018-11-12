@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   ATTRIBUTES_PARAMS =
     %i(name screen_size operator_system_id cpu battery brand_id price
-    reivew picture).freeze
+    review picture).freeze
 
   has_many :liked, class_name: Like.name, dependent: :destroy
   has_many :liked_user, through: :liked, source: :user

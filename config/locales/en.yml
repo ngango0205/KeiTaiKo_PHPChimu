@@ -41,6 +41,8 @@ en:
       sign_in: "Sign In"
       sign_up: "Sign Up"
       manage_review: "Manage Review"
+      all_review: "All Review"
+      create_review: "Create Review"
   reviews:
     index:
       title: "All Review"
@@ -62,6 +64,7 @@ en:
       delete_comment: "Delete Comment"
       reply: "Reply"
       edit: "Edit"
+      edit_review: "Edit this review"
     edit:
       not_permission: "You don't have permission to edit this review"
       title: "Edit Review"

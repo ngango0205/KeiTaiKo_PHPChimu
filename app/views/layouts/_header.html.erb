@@ -10,8 +10,8 @@
           <div class="navbar-collapse collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <%= link_to "All Review", reviews_path, class:"nav-link" %>
-                </li>
+                <%= link_to t(".all_review"), reviews_path, class:"nav-link" %>
+              </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Review
@@ -138,6 +138,9 @@
                 </div>
               </li> -->
               <% if user_signed_in? %>
+                <li>
+                  <%= link_to t(".create_review"), new_review_path, class:"nav-link" %>
+                </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <%= current_user.name %>

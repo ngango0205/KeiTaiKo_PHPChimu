@@ -102,7 +102,13 @@
 
         <!-- Property description start -->
         <div class="property-description mb-60">
-          <h3 class="heading">Review</h3>
+          <div class="pull-left">
+            <h3 class="heading">Review</h3>
+          </div>
+          <div class="p-r">
+            <%= link_to t(".edit_review"), edit_review_path(@review) %>
+          </div>
+          <br><br><br>
           <p><%= @review.review %></p>
         </div>
         <!-- Property details start -->
