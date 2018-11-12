@@ -23,7 +23,7 @@
           </a>
           <div class="media-body align-self-center">
             <h5>
-              <a href="properties-details.html"><%= review.name %></a>
+              <%= link_to review.name, review_path(review) %>
             </h5>
             <p><%= review.created_at %></p>
             <p> <strong><%= t "admin.reviews.review_detail.price_str", price: price_review(review.price) %>VND</strong></p>
