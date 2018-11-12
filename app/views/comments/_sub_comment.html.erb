@@ -10,12 +10,12 @@
 <div class="comment-content">
   <div class="comment-meta">
     <div class="comment-meta-author">
-      <%= sub_comment.user.name %>
+      <%= link_to sub_comment.user.name, user_path(sub_comment.user) %>
     </div>
     <div class="comment-meta-reply">
       <% if sub_comment.user == current_user %>
         <%= link_to t(".delete_comment"), comment_path(sub_comment), method: :delete, data: { confirm: "Are you sure?" } %>
-        <%= link_to t(".edit"), review_form_edit_path(@review, comment_id: sub_comment.id), remote: true %> 
+        <%= link_to t(".edit"), review_form_edit_path(@review, comment_id: sub_comment.id), remote: true %>
       <% end %>
       <%= link_to t(".reply"), review_form_reply_path(@review, parent_cmt_id: comment.id), remote: true %>
     </div>

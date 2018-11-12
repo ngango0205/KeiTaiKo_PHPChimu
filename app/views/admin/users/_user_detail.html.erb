@@ -10,7 +10,7 @@
               <% end %>
             </div>
             <div class="property-overlay">
-              <%= link_to edit_user_registration_path(user), class:"overlay-link" do %>
+              <%= link_to user_path(user), class:"overlay-link" do %>
                   <i class="fa fa-link"></i>
               <% end %>
             </div>
@@ -19,7 +19,7 @@
       <div class="col-lg-7 col-md-7 align-self-center col-pad">
         <div class="detail">
           <h1 class="title">
-            <%= link_to edit_user_registration_path(user) do %><%= user.name %><% end %>
+            <%= link_to user_path(user) do %><%= user.name %><% end %>
           </h1>
           <ul class="facilities-list clearfix">
             <li>

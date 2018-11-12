@@ -343,7 +343,7 @@
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInLeft delay-04s">
         <div class="agent-2">
           <div class="agent-photo">
-            <%= link_to edit_user_registration_path(@most_review_users[0]) do %>
+            <%= link_to user_path(@most_review_users[0]) do %>
               <% if @most_review_users[0].picture.present? %>
                 <%= cl_image_tag(@most_review_users[0].picture, class:"img-fluid-1") %>
               <% else %>
@@ -353,7 +353,7 @@
           </div>
           <div class="agent-details">
             <h5>
-              <%= link_to @most_review_users[0].name, edit_user_registration_path(@most_review_users[0]) %>
+              <%= link_to @most_review_users[0].name, user_path(@most_review_users[0]) %>
             </h5>
             <p>Web Developer</p>
             <ul class="social-list clearfix">
@@ -368,7 +368,7 @@
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInLeft delay-04s">
         <div class="agent-2">
           <div class="agent-photo">
-            <%= link_to edit_user_registration_path(@most_review_users[1]) do %>
+            <%= link_to user_path(@most_review_users[1]) do %>
               <% if @most_review_users[1].picture.present? %>
                 <%= cl_image_tag(@most_review_users[1].picture, class:"img-fluid-1") %>
               <% else %>
@@ -378,7 +378,7 @@
           </div>
           <div class="agent-details">
             <h5>
-              <%= link_to @most_review_users[1].name, edit_user_registration_path(@most_review_users[1]) %>
+              <%= link_to @most_review_users[1].name, user_path(@most_review_users[1]) %>
             </h5>
             <p>Creative Director</p>
             <ul class="social-list clearfix">
@@ -393,7 +393,7 @@
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInRight delay-04s">
         <div class="agent-2">
           <div class="agent-photo">
-            <%= link_to edit_user_registration_path(@most_review_users[2]) do %>
+            <%= link_to user_path(@most_review_users[2]) do %>
               <% if @most_review_users[2].picture.present? %>
                 <%= cl_image_tag(@most_review_users[2].picture, class:"img-fluid-1") %>
               <% else %>
@@ -403,7 +403,7 @@
           </div>
           <div class="agent-details">
             <h5>
-              <%= link_to @most_review_users[2].name, edit_user_registration_path(@most_review_users[2]) %>
+              <%= link_to @most_review_users[2].name, user_path(@most_review_users[2]) %>
             </h5>
             <p>Office Manager</p>
             <ul class="social-list clearfix">
@@ -418,7 +418,7 @@
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 wow fadeInRight delay-04s">
         <div class="agent-2">
           <div class="agent-photo">
-            <%= link_to edit_user_registration_path(@most_review_users[3]) do %>
+            <%= link_to user_path(@most_review_users[3]) do %>
               <% if @most_review_users[3].picture.present? %>
                 <%= cl_image_tag(@most_review_users[3].picture, class:"img-fluid-1") %>
               <% else %>
@@ -428,7 +428,7 @@
           </div>
           <div class="agent-details">
             <h5>
-              <%= link_to @most_review_users[3].name, edit_user_registration_path(@most_review_users[3]) %>
+              <%= link_to @most_review_users[3].name, user_path(@most_review_users[3]) %>
             </h5>
             <p>Support Manager</p>
             <ul class="social-list clearfix">
