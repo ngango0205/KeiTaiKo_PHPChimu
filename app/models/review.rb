@@ -29,5 +29,4 @@ class Review < ApplicationRecord
   def self.unchecked_review
     where is_confirm: false
   end
-
 end

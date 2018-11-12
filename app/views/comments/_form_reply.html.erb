@@ -11,7 +11,7 @@
   <div class="comment-content">
     <div class="comment-meta">
       <div class="comment-meta-author">
-        <%= current_user.name %>
+        <%= link_to current_user.name, user_path(current_user) %>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -19,7 +19,7 @@
       <%= form_for :reply_comment, url: review_comments_path(@reply_review.id), remote: true do |f| %>
       <%= hidden_field_tag :parent_comment_id,
         @parent_comment.id %>
-        <%= text_area :reply_comment, :content, :rows => 2, :cols => 70, 
+        <%= text_area :reply_comment, :content, :rows => 2, :cols => 70,
           class:"form-control", placeholder: "Write message" %>
         <%= f.submit t(".reply_comment"), class:"btn btn-color btn-md btn-message" %>
       <% end %>
