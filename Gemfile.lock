@@ -87,31 +87,15 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (6.1.0)
-      elasticsearch-api (= 6.1.0)
-      elasticsearch-transport (= 6.1.0)
-    elasticsearch-api (6.1.0)
-      multi_json
-    elasticsearch-model (6.0.0)
-      activesupport (> 3)
-      elasticsearch (> 1)
-      hashie
-    elasticsearch-rails (6.0.0)
-    elasticsearch-transport (6.1.0)
-      faraday
-      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
     faker (1.9.1)
       i18n (>= 0.7)
-    faraday (0.15.3)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    hashie (3.6.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.1.1)
@@ -151,7 +135,6 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    multipart-post (2.0.0)
     mysql2 (0.4.10)
     netrc (0.11.0)
     nio4r (2.3.1)
@@ -191,6 +174,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.1)
+    ransack (2.1.0)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
     ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
@@ -269,8 +257,6 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   devise
-  elasticsearch-model
-  elasticsearch-rails
   faker
   font-awesome-rails
   jbuilder (~> 2.5)
@@ -282,6 +268,7 @@ DEPENDENCIES
   pry
   puma (~> 3.7)
   rails (~> 5.1.5)
+  ransack
   ratyrate
   redis (~> 4.0)
   sass-rails (~> 5.0)
