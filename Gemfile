@@ -25,9 +25,8 @@ gem "carrierwave"
 gem "cloudinary"
 gem "ratyrate"
 gem "kaminari"
-gem "elasticsearch-model"
-gem "elasticsearch-rails"
 gem "loofah", ">= 2.2.3"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

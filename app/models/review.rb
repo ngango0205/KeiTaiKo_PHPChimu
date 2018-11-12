@@ -1,7 +1,4 @@
-require "elasticsearch/model" 
 class Review < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
   ATTRIBUTES_PARAMS =
     %i(name screen_size operator_system_id cpu battery brand_id price
     reivew picture).freeze
@@ -33,30 +30,4 @@ class Review < ApplicationRecord
     where is_confirm: false
   end
 
-  settings index: {number_of_shards: 1} do
-    mappings dynamic: "false" do
-      indexes :name, analyzer: "english"
-      indexes :about, analyzer: "english"
-    end
-  end
-  class << self
-    def search query
-      __elasticsearch__.search(
-        {
-          query: {
-            multi_match: {
-              query: query,
-              fields: ["name"]
-            }
-          }
-        }
-      )
-    end
-  end
 end
-
-Review.__elasticsearch__.client.indices.delete index: Review.index_name rescue nil
-Review.__elasticsearch__.client.indices.create \
-  index: Review.index_name,
-  body: { settings: Review.settings.to_hash, mappings: Review.mappings.to_hash }
-Review.import
