@@ -159,7 +159,7 @@ en:
         name: "Name: "
         email: "Email: "
         created_at: "Created At: "
-  searchs:
+  search:
     search:
       title: "Search Result"
       user_title: "User"
