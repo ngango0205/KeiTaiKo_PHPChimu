@@ -50,22 +50,22 @@
           <div class="carousel-inner">
             <div class="active item carousel-item" data-slide-number="0">
               <% if @review.picture? %>
-                <%= cl_image_tag(@review.picture,:size => "200x180", :crop => :fill, :class => "img-fluid") %>
+                <%= cl_image_tag(@review.picture,:size => "730x410", :crop => :fill, :class => "img-fluid") %>
               <% else %>
                 <%= image_tag("banner-3.jpg", :class => "img-fluid") %>
               <% end %>
             </div>
             <div class="item carousel-item" data-slide-number="1">
-              <img src="assets/img/property-6.jpg" class="img-fluid" alt="property-6">
+              <img src="https://cnet1.cbsistatic.com/img/xZ17F3UMdbXIbS_yOYA3dY7Btp0=/1600x900/2017/10/31/a22348c2-6d9b-4c45-9b4d-e5e2d1ce0344/iphone-x-comparisons-01.jpg" class="img-fluid" alt="property-6">
             </div>
             <div class="item carousel-item" data-slide-number="2">
-              <img src="assets/img/property-1.jpg" class="img-fluid" alt="property-1">
+              <img src="https://hoanghamobile.com/Uploads/Originals/2018/05/03/201805031733249483_180502-samsung-galaxy-a6-plus-2018-official-02.jpg;width=720;height=500;watermark=logo;crop=auto;quality=80;format=jpg" class="img-fluid" alt="property-1">
             </div>
             <div class="item carousel-item" data-slide-number="4">
-              <img src="assets/img/property-5.jpg" class="img-fluid" alt="property-5">
+              <img src="https://9to5mac.com/wp-content/uploads/sites/6/2018/06/2018-iphone.jpeg?quality=82&strip=all&w=1600" class="img-fluid" alt="property-5">
             </div>
             <div class="item carousel-item" data-slide-number="5">
-              <img src="assets/img/property-8.jpg" class="img-fluid" alt="property-8">
+              <img src="https://static.digit.in/product/aac81fcbc39adabeab73ab8cb436273867fcd615.jpeg" class="img-fluid" alt="property-8">
             </div>
             <a class="carousel-control left" href="#propertiesDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
             <a class="carousel-control right" href="#propertiesDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
@@ -74,27 +74,31 @@
           <ul class="carousel-indicators smail-properties list-inline nav nav-justified">
             <li class="list-inline-item active">
               <a id="carousel-selector-0" class="selected" data-slide-to="0" data-target="#propertiesDetailsSlider">
-              <img src="assets/img/property-4.jpg" class="img-fluid" alt="property-4">
+              <% if @review.picture? %>
+                <%= cl_image_tag(@review.picture,:size => "730x410", :crop => :fill, :class => "img-fluid") %>
+              <% else %>
+                <%= image_tag("banner-3.jpg", :class => "img-fluid") %>
+              <% end %>
               </a>
             </li>
             <li class="list-inline-item">
               <a id="carousel-selector-1" data-slide-to="1" data-target="#propertiesDetailsSlider">
-              <img src="assets/img/property-6.jpg" class="img-fluid" alt="property-6">
+              <img src="https://cnet1.cbsistatic.com/img/xZ17F3UMdbXIbS_yOYA3dY7Btp0=/1600x900/2017/10/31/a22348c2-6d9b-4c45-9b4d-e5e2d1ce0344/iphone-x-comparisons-01.jpg" class="img-fluid" alt="property-6">
               </a>
             </li>
             <li class="list-inline-item">
               <a id="carousel-selector-2" data-slide-to="2" data-target="#propertiesDetailsSlider">
-              <img src="assets/img/property-1.jpg" class="img-fluid" alt="property-1">
+              <img src="https://hoanghamobile.com/Uploads/Originals/2018/05/03/201805031733249483_180502-samsung-galaxy-a6-plus-2018-official-02.jpg;width=720;height=500;watermark=logo;crop=auto;quality=80;format=jpg" class="img-fluid" alt="property-1">
               </a>
             </li>
             <li class="list-inline-item">
               <a id="carousel-selector-3" data-slide-to="3" data-target="#propertiesDetailsSlider">
-              <img src="assets/img/property-5.jpg" class="img-fluid" alt="property-5">
+              <img src="https://9to5mac.com/wp-content/uploads/sites/6/2018/06/2018-iphone.jpeg?quality=82&strip=all&w=1600" class="img-fluid" alt="property-5">
               </a>
             </li>
             <li class="list-inline-item">
               <a id="carousel-selector-4" data-slide-to="4" data-target="#propertiesDetailsSlider">
-              <img src="assets/img/property-8.jpg" class="img-fluid" alt="property-8">
+              <img src="https://static.digit.in/product/aac81fcbc39adabeab73ab8cb436273867fcd615.jpeg" class="img-fluid" alt="property-8">
               </a>
             </li>
           </ul>
