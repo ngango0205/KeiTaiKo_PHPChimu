@@ -14,7 +14,7 @@
     </div>
     <div class="comment-meta-reply">
       <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">...</button>
+        <button class="dropbtn hihi">...</button>
         <div id="myDropdown" class="dropdown-content">
           <% if comment.user == current_user %>
             <%= link_to t(".delete_comment"), comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
