@@ -72,7 +72,7 @@ class CommentsController < ApplicationController
 
   def create_comment
     @comment = review.comments.new comments_params
-    @comments = review.comments
+    @comments = review.comments.where(parent_id: nil)
     comment.user = current_user
     if comment.save
       respond_to do |format|
