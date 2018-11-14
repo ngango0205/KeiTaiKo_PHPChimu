@@ -20,7 +20,7 @@ $(window).on('load', function () {
 
 	showPopupBought();
 
-  $('.hihi').on('click', function(){
+  $('#comment-show').on('click', '.hihi', function(){
     var drop = $(this).parent().find('.dropdown-content');
     if (drop.is(":hidden")) {
     $('.dropdown-content').hide();
