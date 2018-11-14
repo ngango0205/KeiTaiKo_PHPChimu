@@ -33,10 +33,16 @@ class CommentsController < ApplicationController
 
   def destroy
     @review = comment.review
+    @comments = review.comments.where(parent_id: nil)
     @sub_comment = Comment.find_sub_comments(comment.id)
     if comment.destroy && sub_comment.destroy_all
-      flash[:success] = t ".delete_success"
-      redirect_to review
+      respond_to do |format|
+        format.html {
+          flash[:success] = t ".delete_success"
+          redirect_to review
+        }
+        format.js
+      end
     else
       flash[:danger] = t ".delete_fail"
       redirect_to review

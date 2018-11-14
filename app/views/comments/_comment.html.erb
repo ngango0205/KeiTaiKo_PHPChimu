@@ -17,7 +17,7 @@
         <button class="dropbtn hihi">...</button>
         <div id="myDropdown" class="dropdown-content">
           <% if comment.user == current_user %>
-            <%= link_to t(".delete_comment"), comment_path(comment), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to t(".delete_comment"), comment_path(comment), method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
             <%= link_to t(".edit"), review_form_edit_path(@review,
             comment_id: comment.id), remote: true %>
           <% end %>

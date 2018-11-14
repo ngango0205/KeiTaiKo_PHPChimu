@@ -13,11 +13,16 @@
       <%= link_to sub_comment.user.name, user_path(sub_comment.user) %>
     </div>
     <div class="comment-meta-reply">
-      <% if sub_comment.user == current_user %>
-        <%= link_to t(".delete_comment"), comment_path(sub_comment), method: :delete, data: { confirm: "Are you sure?" } %>
-        <%= link_to t(".edit"), review_form_edit_path(@review, comment_id: sub_comment.id), remote: true %>
-      <% end %>
-      <%= link_to t(".reply"), review_form_reply_path(@review, parent_cmt_id: comment.id), remote: true %>
+      <div class="dropdown">
+        <button class="dropbtn hihi">...</button>
+        <div id="myDropdown" class="dropdown-content">
+          <% if sub_comment.user == current_user %>
+            <%= link_to t(".delete_comment"), comment_path(sub_comment), method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+            <%= link_to t(".edit"), review_form_edit_path(@review, comment_id: sub_comment.id), remote: true %>
+          <% end %>
+          <%= link_to t(".reply"), review_form_reply_path(@review, parent_cmt_id: comment.id), remote: true %>
+        </div>
+      </div>
     </div>
     <div class="comment-meta-date">
       <span><%= sub_comment.created_at.strftime("%H:%M %-d/%-m/%y") %></span>
