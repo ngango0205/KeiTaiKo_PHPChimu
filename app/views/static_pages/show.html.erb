@@ -2,7 +2,7 @@
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= image_tag("banner-1", class:"d-block w-100", alt:"banner-1") %>
+        <%= image_tag("banner-1.jpg", class:"d-block w-100", alt:"banner-1") %>
         <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
           <div class="carousel-content container">
             <div class="text-center">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <%= image_tag("banner-2", class:"d-block w-100", alt:"banner-2") %>
+        <%= image_tag("banner-2.jpg", class:"d-block w-100", alt:"banner-2") %>
         <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
           <div class="carousel-content container">
             <div class="text-center">
@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <%= image_tag("banner-3", class:"d-block w-100", alt:"banner-3") %>
+        <%= image_tag("banner-3.jpg", class:"d-block w-100", alt:"banner-3") %>
         <div class="carousel-caption banner-slider-inner d-flex h-100 text-center">
           <div class="carousel-content container">
             <div class="text-center">
@@ -132,7 +132,7 @@
             <% if @recent_reviews[0].picture.present? %>
               <%= cl_image_tag(@recent_reviews[0].picture, class:"img-fluid") %>
             <% else %>
-              <%= image_tag("banner-2", class:"img-fluid") %>
+              <%= image_tag("banner-2.jpg", class:"img-fluid") %>
             <% end %>
             </a>
             <div class="property-overlay">
@@ -169,7 +169,7 @@
             <% if @recent_reviews[1].picture.present? %>
               <%= cl_image_tag(@recent_reviews[1].picture, class:"img-fluid") %>
             <% else %>
-              <%= image_tag("banner-1", class:"img-fluid") %>
+              <%= image_tag("banner-1.jpg", class:"img-fluid") %>
             <% end %>
             </a>
             <div class="property-overlay">
@@ -206,7 +206,7 @@
             <% if @recent_reviews[2].picture.present? %>
               <%= cl_image_tag(@recent_reviews[2].picture, class:"img-fluid") %>
             <% else %>
-              <%= image_tag("banner-1", class:"img-fluid") %>
+              <%= image_tag("banner-1.jpg", class:"img-fluid") %>
             <% end %>
             </a>
             <div class="property-overlay">
@@ -243,7 +243,7 @@
             <% if @recent_reviews[3].picture.present? %>
               <%= cl_image_tag(@recent_reviews[3].picture, class:"img-fluid") %>
             <% else %>
-              <%= image_tag("banner-2", class:"img-fluid") %>
+              <%= image_tag("banner-2.jpg", class:"img-fluid") %>
             <% end %>
             </a>
             <div class="property-overlay">
